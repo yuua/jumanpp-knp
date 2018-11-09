@@ -25,10 +25,10 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && python3.6 get-pip.py && \
     cd cmake-3.12.4 && \
     ./configure CFLAGS="-O3" CXXFLAGS="-O3" && make -j $(grep -c ^processor /proc/cpuinfo) && checkinstall -y && \
     export PATH="/usr/local/bin:$PATH" && \
-    cd /app/jumanpp-2.0.0-rc2 && mkdir build && \
+    cd /work/jumanpp-2.0.0-rc2 && mkdir build && \
     cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local && \
     make  -j $(grep -c ^processor /proc/cpuinfo) && checkinstall -y && \
     wget http://knp-4.19.tar.bz2 http://nlp.ist.i.kyoto-u.ac.jp/nl-resource/knp/knp-4.19.tar.bz2 && \
     tar xvf knp-4.19.tar.bz2 && \
-    cd /app/knp-4.19 && ./configure CFLAGS="-O3" CXXFLAGS="-O3" &&  make -j $(grep -c ^processor /proc/cpuinfo) && checkinstall -y
+    cd /work/knp-4.19 && ./configure CFLAGS="-O3" CXXFLAGS="-O3" &&  make -j $(grep -c ^processor /proc/cpuinfo) && checkinstall -y
 
